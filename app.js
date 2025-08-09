@@ -23,10 +23,12 @@ btn.addEventListener("click",async () => {
 let url2 = "https://dog.ceo/api/breeds/image/random";
 let btn2 = document.querySelector("#dogBtn");
 let img = document.querySelector("#dogImg");
+let h2 = document.querySelector("h2");
 
 btn2.addEventListener("click",async()=>{
     let dogUrl = await dogImg();
     img.setAttribute("src",dogUrl);
+    h2.innerText = "This is a Dog."
 })
 
 async function dogImg(){
@@ -34,3 +36,4 @@ async function dogImg(){
     let dogUrl = res.data.message;
     return dogUrl;
 }
+
